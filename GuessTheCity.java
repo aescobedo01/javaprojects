@@ -15,17 +15,18 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.lang.String;
 
-helllo
+//asking the user a question about the capitals of us states
 class Main {
     public static void main(String[] args){
         Scanner myObj = new Scanner(System.in); //create a scanner object
-        System.out.println("Enter a U.S. state capital:");
+        System.out.println("What is the capital of " + yadayadastate + "?");
 
         String cityInput = myObj.nextLine(); //read user input
-        System.out.println("The matching state is: " + cityInput); //output user input
+        System.out.println(cityInput + " is " + incorrectorcorrect "."); //output user input
     }
 }
 
+//listing us states and their capitals
 public class Assignment {
 // It begins with the creation of the two dimension array that includes state and capital.
     public static void main (String[] args) {
