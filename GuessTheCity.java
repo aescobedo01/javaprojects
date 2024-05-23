@@ -19,14 +19,28 @@ import java.lang.String;
 class Main {
     public static void main(String[] args){
         Scanner myObj = new Scanner(System.in); //create a scanner object
-        System.out.println("What is the capital of " + yadayadastate + "?");
+        System.out.println("What is the capital of " + StateAndCapital + "?");
 
         String cityInput = myObj.nextLine(); //read user input
         System.out.println(cityInput + " is " + incorrectorcorrect "."); //output user input
     }
 }
 
+
+if cityInput = StateAndCapital {
+    correct
+}
+else {
+    incorrect
+}
+
+//pull random item from the array
+String[][] randNum = getRandomElement(StateAndCapital);
+
 //listing us states and their capitals
+public static int getRandomElement(int[] arr){
+    return arr[ThreadLocalRandom.current().nextInt(arr.length)];
+}
 public class Assignment {
 // It begins with the creation of the two dimension array that includes state and capital.
     public static void main (String[] args) {
