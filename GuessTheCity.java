@@ -11,7 +11,7 @@ user's answer is not case-sensitive. */
 
 import java.util.Scanner;
 
-public class Assignment {
+public class GuessTheCity {
 // It begins with the creation of the two dimension array that includes state and capital.
     public static void main (String[] args) {
         String[][] StateAndCapital = {
