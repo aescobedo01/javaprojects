@@ -1,4 +1,3 @@
-//this is a commentSystem.Out.println("Hello world!");
 
 /*asks user to enter a capital for U.S. states 
 program reports incorrect/correct. 
@@ -14,36 +13,17 @@ user's answer is not case-sensitive. */
 import java.util.Scanner;
 import java.util.Arrays;
 import java.lang.String;
-
-//asking the user a question about the capitals of us states
-class Main {
-    public static void main(String[] args){
-        Scanner myObj = new Scanner(System.in); //create a scanner object
-        System.out.println("What is the capital of " + StateAndCapital + "?");
-
-        String cityInput = myObj.nextLine(); //read user input
-        System.out.println(cityInput + " is " + incorrectorcorrect "."); //output user input
-    }
-}
-
-
-if cityInput = StateAndCapital {
-    correct
-}
-else {
-    incorrect
-}
-
-//pull random item from the array
-String[][] randNum = getRandomElement(StateAndCapital);
+import java.util.concurrent.ThreadLocalRandom;
+import java.io.*;
 
 //listing us states and their capitals
 public static int getRandomElement(int[] arr){
     return arr[ThreadLocalRandom.current().nextInt(arr.length)];
 }
-public class Assignment {
+
+class Assignment {
 // It begins with the creation of the two dimension array that includes state and capital.
-    public static void main (String[] args) {
+    public static void main (String[] args) throws IOException {
         String[][] StateAndCapital = {
                 {"Alabama", "Montgomery"},
                 {"Alaska", "Juneau"},
@@ -95,4 +75,37 @@ public class Assignment {
                 {"West Virginia", "Charleston"},
                 {"Wisconsin", "Madison"},
                 {"Wyoming", "Cheyenne"}
-        }}};
+        }
+    // iterating over an array 
+    for (i = 0; i < ar.length; i++) { 
+  
+        // accessing each element of array 
+        x = ar[i]; 
+        System.out.print(x + " "); 
+    } 
+    }};
+
+//asking the user a question about the capitals of us states
+class Main {
+    public static void main(String[] args){
+        Scanner myObj = new Scanner(System.in); //create a scanner object
+        System.out.println("What is the capital of " + StateAndCapital[0] + "?");
+
+        String cityInput = myObj.nextLine(); //read user input
+        
+        if cityInput = StateAndCapital[1] {
+            System.out.println(cityInput + " is correct.");
+        } else {
+            System.out.println("The correct answer is " + StateAndCapital[1] + ".");
+        }
+    }
+
+    //declare total correct 
+Integer userScore = 0;
+Integer totalScore = 0;
+
+if (answerIsCorrect) {
+    userScore++;
+}
+totalScore++
+}
