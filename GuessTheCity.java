@@ -68,13 +68,14 @@ public class GuessTheCity {
         };
 
             //score counters
-Integer userScore = 0;
-Integer totalScore = 0;
+int userScore = 0;
+int totalScore = 0;
+
+Scanner myObj = new Scanner(System.in); //create a scanner object
 
     // iterating over the array  
     for (String[] stateCapitalPair : StateAndCapital) { 
-  
-        Scanner myObj = new Scanner(System.in); //create a scanner object
+
         System.out.println("What is the capital of " + stateCapitalPair[0] + "?");
 
         String cityInput = myObj.nextLine(); //read user input
