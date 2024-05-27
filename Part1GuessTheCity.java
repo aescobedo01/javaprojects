@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class GuessTheCity {
+public class Part1GuessTheCity {
 // creating the two dimensional array that includes state and capital.
     public static void main (String[] args) {
         String[][] StateAndCapital = {

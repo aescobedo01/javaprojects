@@ -1,20 +1,18 @@
-/*asks user to enter a capital for U.S. states 
-program reports incorrect/correct. 
-Display current array contents 
-repeat for all state capitals
-display the total correct
+/* part 2
+store the pairs of each state and its capital in a Map using the HashMap function. 
+Display the content of the Map, then use the TreeMap class to sort the map while 
+using a binary search tree for storage. Next, your program should prompt the user 
+to enter a state and it should then display the capital for the state.
+ */
 
-50 states and their capitals are stored in a 
-two-dimensional array in order by state name. 
-bubble sort to sort content by capital.
-user's answer is not case-sensitive. */
-
+import java.util.HashMap;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class GuessTheCity {
 // creating the two dimensional array that includes state and capital.
     public static void main (String[] args) {
-        HashMap<String, String> stateAndCapital = new Hashmap<>();
+        HashMap<String, String> stateAndCapital = new HashMap<>();
         stateAndCapital.put("Alabama", "Montgomery");
         stateAndCapital.put("Alaska", "Juneau");
         stateAndCapital.put("Arizona", "Phoenix");
@@ -66,26 +64,30 @@ public class GuessTheCity {
         stateAndCapital.put("Wisconsin", "Madison");
         stateAndCapital.put("Wyoming", "Cheyenne");
 
-        //display hashmap content
-        System.out.println("HashMap content: " + stateAndCapital);
-
         //create treemap form hshmap to sort by keys
         TreeMap<String, String> sortedStateAndCapital = new TreeMap<>(stateAndCapital);
-
-        //display treemap content 
-        System.out.println("TreeMap content: " + sortedStateAndCapital);
         
-        //prompt user to enter a state
+        //user types in a state
         Scanner scanner = new Scanner(System.in);
+
+        while(true) {
         System.out.println("Enter a state: ");
         String state = scanner.nextLine();
 
-        //display the capital
-        if (sortedStateAndCapital.containsKey(state)){
-            System.out.println("The capital of " + state + " is " + sortedStateAndCapital.get(state) + ".");
+        //if user types in "exit" =, program ends
+        if ("exit".equalsIgnoreCase(state)) {
+            break; 
+        } 
 
+        //convert the users input to title case to match the formatted state names inside the map
+        String formattedState = state.substring(0, 1).toUpperCase() + state.substring(1).toLowerCase();
+
+        //display the capital
+        if (sortedStateAndCapital.containsKey(formattedState)){
+            System.out.println("The capital of " + formattedState + " is " + sortedStateAndCapital.get(formattedState) + ".");
         } else {
             System.out.println("State not found.");
         }
+    }
         scanner.close();
     }}
