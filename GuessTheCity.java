@@ -65,10 +65,19 @@ to enter a state and it should then display the capital for the state.
          stateAndCapital.put("West Virginia", "Charleston");
          stateAndCapital.put("Wisconsin", "Madison");
          stateAndCapital.put("Wyoming", "Cheyenne");
+
+        // display content of the map
+        System.out.println("Content of the Map:");
+        displayMap(stateAndCapital);
  
          //create treemap form hshmap to sort by keys
          TreeMap<String, String> sortedStateAndCapital = new TreeMap<>(stateAndCapital);
  
+                // display sorted map
+                System.out.println("\nSorted map by state:");
+                displayMap(sortedStateAndCapital);
+        
+
          //user types in a state
          Scanner scanner = new Scanner(System.in);
  
@@ -100,5 +109,11 @@ to enter a state and it should then display the capital for the state.
      }
          scanner.close();
  }
- 
+      // method to display map content
+      private static void displayMap(Map<String, String> map) {
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " - " + entry.getValue());
+        }
+    }
+
  }

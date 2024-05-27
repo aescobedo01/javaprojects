@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Part1GuessTheCity {
 // creating the two dimensional array that includes state and capital.
     public static void main (String[] args) {
-        String[][] StateAndCapital = {
+        String[][] stateCapitals = {
                 {"Alabama", "Montgomery"},
                 {"Alaska", "Juneau"},
                 {"Arizona", "Phoenix"},
@@ -56,18 +56,16 @@ public class Part1GuessTheCity {
                 {"Wyoming", "Cheyenne"}
         };
 
+        // Display current contents of the array
+        System.out.println("Current contents of the array:");
+        displayArray(stateCapitals);
 
-        //bubble sort to sort content by capital
-for (int i = 0; i < StateAndCapital.length - 1; i++) {
-for (int j = 0; j < StateAndCapital.length - i - 1; j++) {
-    if (StateAndCapital[j][1].compareTo(StateAndCapital[j + 1][1]) > 0){
-        //swap stateandcapital[j] and stateandcapital[j+1]
-        String[] temp = StateAndCapital[j];
-        StateAndCapital[j] = StateAndCapital[j + 1];
-        StateAndCapital[j + 1] = temp;
-    }
-}
-}
+        // Sort the array by capital using bubble sort
+        bubbleSortByCapital(stateCapitals);
+
+        // Display the sorted array
+        System.out.println("\nSorted array by capital:");
+        displayArray(stateCapitals);
 
 //score count
 int userScore = 0;
@@ -76,7 +74,7 @@ int totalScore = 0;
 Scanner myObj = new Scanner(System.in); //create a scanner object
 
     // iterating over the array  
-    for (String[] stateCapitalPair : StateAndCapital) { 
+    for (String[] stateCapitalPair : stateCapitals) { 
 
         System.out.println("What is the capital of " + stateCapitalPair[0] + "?");
 
@@ -98,10 +96,30 @@ Scanner myObj = new Scanner(System.in); //create a scanner object
         }
         totalScore++;
     }
-    
-
 
     //display total correct
 System.out.println(userScore + "/" + totalScore + " correct.");
     }
+
+        // Method to display the contents of the array
+        private static void displayArray(String[][] array) {
+            for (String[] row : array) {
+                System.out.println(row[0] + " - " + row[1]);
+            }
+        }
+    
+        // Method to sort the array by capital using bubble sort
+        private static void bubbleSortByCapital(String[][] array) {
+            int n = array.length;
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = 0; j < n - i - 1; j++) {
+                    if (array[j][1].compareToIgnoreCase(array[j + 1][1]) > 0) {
+                        // Swap the elements
+                        String[] temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
+                }
+            }
+        }
 }
