@@ -8,6 +8,8 @@ to enter a state and it should then display the capital for the state.
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.TreeMap;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class GuessTheCity {
 // creating the two dimensional array that includes state and capital.
@@ -74,17 +76,27 @@ public class GuessTheCity {
         System.out.println("Enter a state: ");
         String state = scanner.nextLine();
 
-        //if user types in "exit" =, program ends
+        //if user types in "exit", program ends
         if ("exit".equalsIgnoreCase(state)) {
             break; 
         } 
 
+    //convert the users input to title case to match the formatted state names inside the map
+    String[] words = state.split(" ");
+    StringBuilder formattedStateBuilder = new StringBuilder();
+    for (String word : words) {
+    formattedStateBuilder.append(Character.toUpperCase(word.charAt(0)))
+    .append(word.substring(1).toLowerCase())
+    .append(" ");
+    }
+    String formattedState = formattedStateBuilder.toString().trim();
+
         //display the capital
-        if (sortedStateAndCapital.containsKey(state)){
-            System.out.println("The capital of " + state + " is " + sortedStateAndCapital.get(state) + ".");
+        if (sortedStateAndCapital.containsKey(formattedState)){
+            System.out.println("The capital of " + formattedState + " is " + sortedStateAndCapital.get(formattedState) + ".");
         } else {
             System.out.println("State not found.");
         }
     }
         scanner.close();
-    }}
+}}
