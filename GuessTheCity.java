@@ -79,12 +79,9 @@ public class GuessTheCity {
             break; 
         } 
 
-        //convert the users input to title case to match the formatted state names inside the map
-        String formattedState = state.substring(0, 1).toUpperCase() + state.substring(1).toLowerCase();
-
         //display the capital
-        if (sortedStateAndCapital.containsKey(formattedState)){
-            System.out.println("The capital of " + formattedState + " is " + sortedStateAndCapital.get(formattedState) + ".");
+        if (sortedStateAndCapital.containsKey(state)){
+            System.out.println("The capital of " + state + " is " + sortedStateAndCapital.get(state) + ".");
         } else {
             System.out.println("State not found.");
         }
