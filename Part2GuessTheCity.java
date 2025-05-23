@@ -10,7 +10,7 @@ to enter a state and it should then display the capital for the state.
  import java.util.TreeMap;
  import java.util.Map;
  
- public class GuessTheCity {
+ public class Part2GuessTheCity {
  // creating the two dimensional array that includes state and capital
  
      public static void main (String[] args) {
